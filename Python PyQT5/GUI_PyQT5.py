@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QLabel, QGri
 from PyQt5.QtGui import QPixmap
 
 
+#Creation of class MainWindow inheriting from QMainWindow
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
