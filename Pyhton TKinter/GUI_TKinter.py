@@ -41,3 +41,5 @@ open_button.pack()
 
 # Afficher la fenêtre Tkinter
 root.mainloop()
+
+# Maintenant vous avez votre interface graphique!
