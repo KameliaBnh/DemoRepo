@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import filedialog
 from PIL import Image, ImageTk
 
 
@@ -9,7 +8,7 @@ def open_file():
     file_types = [('Image Files', '*.jpg;*.jpeg;*.png;*.gif')]
 
     # Open a dialog to select a file or folder
-    file_path = filedialog.askopenfilename(filetypes=file_types)
+    file_path = tk.filedialog.askopenfilename(filetypes=file_types)
 
     # Display the selected image
     img = Image.open(file_path)
@@ -27,7 +26,8 @@ def export_report():
 # Create a Tkinter window
 root = tk.Tk()
 root.title("Automated Pollinator Monitoring")
-root.geometry("800x600") # Set the size of the window
+root.iconbitmap('C:/Users/benha/Documents/Cranfield/Group Project/Test Different GUI/Pyhton TKinter/bee.ico')
+root.geometry("800x620") # Set the size of the window
 
 # Create a menu bar
 menu_bar = tk.Menu(root)
@@ -36,19 +36,13 @@ menu_bar.add_command(label="Export report", command=export_report)
 root.config(menu=menu_bar)
 
 # Create the frames
-image_frame = tk.Frame(root, width=400, height=580, bd=1, relief="sunken")
-options_frame = tk.Frame(root, width=380, height=280, bd= 1, relief="sunken")
-statistics_frame = tk.Frame(root, width=380, height=300, bd= 1, relief="sunken")
+image_frame = tk.LabelFrame(root, width=400, height=580, bd=1, relief="sunken", text="Visualisation: ")
+options_frame = tk.LabelFrame(root, width=370, height=270, bd= 1, relief="sunken", text="Options: ")
+statistics_frame = tk.LabelFrame(root, width=370, height=300, bd= 1, relief="sunken", text="Statistics: ")
 
-# Create labels for each frame
+# Create label to display image
 image_label = tk.Label(image_frame)
-options_label = tk.Label(options_frame, text="Options: ", padx=5, pady=5)
-statistics_label = tk.Label(statistics_frame, text="Statistics: ", padx=5, pady=5)
-
-# Place the labels at the top left corner of each frame
 image_label.pack(side="top", anchor="nw")
-options_label.pack(side="top", anchor="nw")
-statistics_label.pack(side="top", anchor="nw")
 
 # Place the frames on the window
 image_frame.grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
@@ -59,6 +53,32 @@ statistics_frame.grid(row=0, column=1, padx=5, pady=5, sticky="s")
 image_frame.pack_propagate(0)
 options_frame.pack_propagate(0)
 statistics_frame.pack_propagate(0)
+
+
+## OPTIONS pane ##
+
+# Create options for the detection model
+MODELS = [
+    ("Yolov5", "Yolov5"),
+    ("Yolov8", "Yolov8")
+]
+
+model=tk.StringVar()
+model.set("Yolov5")
+
+for model_name, model_value in MODELS:
+    tk.Radiobutton(options_frame, text=model_name, padx=5, pady=5, variable=model, value=model_value).pack(side="top")
+
+def start_classification():
+    start_label = tk.Label(options_frame, text="Classification model for " + str((model.get())) + " started", padx=5, pady=5) #model.get() returns the value of the selected radio button
+    start_label.pack(side="bottom", padx=5, pady=5)
+
+# Create start button for the detection model
+start_button = tk.Button(options_frame, text="Start", command=start_classification, padx=5, pady=5)
+start_button.pack(side="bottom", padx=5, pady=5)
+
+
+
 
 # Display the Tkinter window
 root.mainloop()
