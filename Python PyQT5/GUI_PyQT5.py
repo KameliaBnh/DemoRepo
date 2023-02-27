@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QLabel
+from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QWidget
 from PyQt5.uic import loadUi
 from PyQt5.QtGui import QPixmap
 
