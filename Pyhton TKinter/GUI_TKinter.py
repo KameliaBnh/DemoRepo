@@ -37,8 +37,8 @@ root.config(menu=menu_bar)
 
 # Create the frames
 image_frame = tk.LabelFrame(root, width=400, height=580, bd=1, relief="sunken", text="Visualisation: ")
-options_frame = tk.LabelFrame(root, width=370, height=270, bd= 1, relief="sunken", text="Options: ")
-statistics_frame = tk.LabelFrame(root, width=370, height=300, bd= 1, relief="sunken", text="Statistics: ")
+options_frame = tk.LabelFrame(root, width=370, height=180, bd= 1, relief="sunken", text="Options: ")
+statistics_frame = tk.LabelFrame(root, width=370, height=400, bd= 1, relief="sunken", text="Statistics: ")
 
 # Create label to display image
 image_label = tk.Label(image_frame)
@@ -55,7 +55,7 @@ options_frame.pack_propagate(0)
 statistics_frame.pack_propagate(0)
 
 
-## OPTIONS pane ##
+## OPTIONS PANE ##
 
 # Create options for the detection model
 MODELS = [
@@ -69,6 +69,12 @@ model.set("Yolov5")
 for model_name, model_value in MODELS:
     tk.Radiobutton(options_frame, text=model_name, padx=5, pady=5, variable=model, value=model_value).pack(side="top")
 
+videoTrack = tk.StringVar()
+videoTrack.set("No")
+
+trackButton = tk.Checkbutton(options_frame, text="Tracking Video", variable=videoTrack, onvalue="Yes", offvalue="No")
+trackButton.pack()
+
 def start_classification():
     start_label = tk.Label(options_frame, text="Classification model for " + str((model.get())) + " started", padx=5, pady=5) #model.get() returns the value of the selected radio button
     start_label.pack(side="bottom", padx=5, pady=5)
@@ -77,6 +83,19 @@ def start_classification():
 start_button = tk.Button(options_frame, text="Start", command=start_classification, padx=5, pady=5)
 start_button.pack(side="bottom", padx=5, pady=5)
 
+
+############################################################################################################################################################################
+
+
+## STATISTICS PANE ##
+
+species_label = tk.Label(statistics_frame, text="Species name: ", padx=5, pady=10)
+species_label.pack(side="top", anchor="nw")
+
+species_label = tk.Label(statistics_frame, text="Species info: ", padx=5, pady=5)
+species_label.pack(side="top", anchor="nw")
+
+############################################################################################################################################################################
 
 
 
