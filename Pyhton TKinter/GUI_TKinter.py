@@ -3,29 +3,29 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 import os
 
-# Créer une fenêtre Tkinter
+# Create a Tkinter window
 root = tk.Tk()
 
-# Définir la taille maximale de l'image pour un écran de 13 pouces
+# Define the maximum size of the image for a 13-inch screen
 max_width = 1366
 max_height = 768
 
-# Créer une fonction pour ouvrir un fichier ou un dossier
+# Create a function to open a file or a folder
 def open_file():
-    # Filtrer les types de fichiers acceptables
-    file_types = [('Fichiers images', '*.jpg;*.jpeg;*.png;*.gif'), ('Dossiers', '*')]
+    # Filter acceptable file types
+    file_types = [('Image files', '*.jpg;*.jpeg;*.png;*.gif'), ('Folders', '*')]
     
-    # Ouvrir une boîte de dialogue pour sélectionner un fichier ou un dossier
+    # Open a dialog box to select a file or folder
     file_path = filedialog.askopenfilename(filetypes=file_types)
 
-    # Afficher le fichier sélectionné
+    # Display the selected file
     if os.path.isdir(file_path):
-        print('Vous avez sélectionné un dossier :', file_path)
+        print('You selected a folder:', file_path)
     else:
-        print('Vous avez sélectionné un fichier :', file_path)
+        print('You selected a file:', file_path)
         img = Image.open(file_path)
         
-        # Redimensionner l'image si elle dépasse la taille maximale
+        # Resize the image if it exceeds the maximum size
         if img.width > max_width or img.height > max_height:
             ratio = min(max_width/img.width, max_height/img.height)
             img = img.resize((int(img.width*ratio), int(img.height*ratio)))
@@ -35,11 +35,11 @@ def open_file():
         label.image = photo
         label.pack()
 
-# Créer un bouton "Ouvrir"
-open_button = tk.Button(root, text="Ouvrir", command=open_file)
+# Create an "Open" button
+open_button = tk.Button(root, text="Open", command=open_file)
 open_button.pack()
 
-# Afficher la fenêtre Tkinter
+# Display the Tkinter window
 root.mainloop()
 
-# Maintenant vous avez votre interface graphique!
+# Now you have your graphical user interface!
