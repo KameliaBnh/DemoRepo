@@ -36,9 +36,9 @@ menu_bar.add_command(label="Export report", command=export_report)
 root.config(menu=menu_bar)
 
 # Create the frames
-image_frame = tk.LabelFrame(root, width=400, height=580, bd=1, relief="sunken", text="Visualisation: ")
-options_frame = tk.LabelFrame(root, width=370, height=220, bd= 1, relief="sunken", text="Options: ")
-statistics_frame = tk.LabelFrame(root, width=370, height=350, bd= 1, relief="sunken", text="Statistics: ")
+image_frame = tk.LabelFrame(root, width=400, height=580, bd=1, relief="sunken", text="Visualisation Pane ")
+options_frame = tk.LabelFrame(root, width=370, height=220, bd= 1, relief="sunken", text="Options Pane ")
+statistics_frame = tk.LabelFrame(root, width=370, height=350, bd= 1, relief="sunken", text="Statistics Pane ")
 
 # Create label to display image
 image_label = tk.Label(image_frame)
