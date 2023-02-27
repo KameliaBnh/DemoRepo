@@ -1,3 +1,5 @@
 #ignore all .txt files
 *.txt
 /Java/GUI_JavaFx/nbproject/private/
+/Java/GUI_JavaFx/build/
+/Java/GUI_JavaFx/dist/
