@@ -37,8 +37,8 @@ root.config(menu=menu_bar)
 
 # Create the frames
 image_frame = tk.LabelFrame(root, width=400, height=580, bd=1, relief="sunken", text="Visualisation: ")
-options_frame = tk.LabelFrame(root, width=370, height=180, bd= 1, relief="sunken", text="Options: ")
-statistics_frame = tk.LabelFrame(root, width=370, height=400, bd= 1, relief="sunken", text="Statistics: ")
+options_frame = tk.LabelFrame(root, width=370, height=220, bd= 1, relief="sunken", text="Options: ")
+statistics_frame = tk.LabelFrame(root, width=370, height=350, bd= 1, relief="sunken", text="Statistics: ")
 
 # Create label to display image
 image_label = tk.Label(image_frame)
@@ -65,6 +65,9 @@ MODELS = [
 
 model=tk.StringVar()
 model.set("Yolov5")
+
+model_label = tk.Label(options_frame, text="Model: ", padx=5, pady=10)
+model_label.pack(side="top", anchor="nw")
 
 for model_name, model_value in MODELS:
     tk.Radiobutton(options_frame, text=model_name, padx=5, pady=5, variable=model, value=model_value).pack(side="top")

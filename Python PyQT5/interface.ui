@@ -2,66 +2,173 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>800</width>
-    <height>594</height>
-   </rect>
-  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>170</y>
-      <width>441</width>
-      <height>371</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>443</x>
-      <y>23</y>
-      <width>351</width>
-      <height>521</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Ouvrir</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="scrollAreaWidgetContents" native="true">
+  <widget class="QWidget" name="MainPane">
+   <widget class="QFrame" name="image_frame">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>40</y>
-      <width>421</width>
-      <height>80</height>
+      <y>10</y>
+      <width>400</width>
+      <height>580</height>
      </rect>
     </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>381</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="options_frame">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>10</y>
+      <width>370</width>
+      <height>220</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="ModelLabel">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>40</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Model:</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="Yolov5Button">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>58</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Yolov5</string>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">ModelButtonGroup</string>
+     </attribute>
+    </widget>
+    <widget class="QRadioButton" name="Yolov8Button">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>40</y>
+       <width>58</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Yolov8</string>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">ModelButtonGroup</string>
+     </attribute>
+    </widget>
+    <widget class="QCheckBox" name="TrackingVideo">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>70</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tracking Video</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Start">
+     <property name="geometry">
+      <rect>
+       <x>147</x>
+       <y>180</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="stats_frame">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>240</y>
+      <width>370</width>
+      <height>350</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="SpeciesNameLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Species Name: </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="SpeciesInfoLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Species Info: </string>
+     </property>
+    </widget>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -70,9 +177,32 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="locale">
+    <locale language="English" country="UnitedKingdom"/>
+   </property>
+   <widget class="QMenu" name="Open">
+    <property name="title">
+     <string>Open</string>
+    </property>
+    <addaction name="OpenFile"/>
+   </widget>
+   <widget class="QMenu" name="ExportReport">
+    <property name="title">
+     <string>Export Report</string>
+    </property>
+   </widget>
+   <addaction name="Open"/>
+   <addaction name="ExportReport"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <action name="OpenFile">
+   <property name="text">
+    <string>Open File</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="ModelButtonGroup"/>
+ </buttongroups>
 </ui>
