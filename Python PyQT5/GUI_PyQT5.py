@@ -1,14 +1,15 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QAction, QMenu
 from PyQt5.uic import loadUi
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QIcon
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        loadUi("interface.ui", self)
+        loadUi("C:/Users/benha/Documents/Cranfield/Group Project/Test Different GUI/interface.ui", self)
         self.setWindowTitle("Automated Pollinator Monitoring")
+        self.setWindowIcon(QIcon("C:/Users/benha/Documents/Cranfield/Group Project/Test Different GUI/bee.png"))
 
         # Get the "Open File" QAction from the QMenuBar
         open_action = self.menuBar().findChild(QMenu, "Open")
@@ -25,6 +26,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = loadUi("interface.ui")
+    window = loadUi("C:/Users/benha/Documents/Cranfield/Group Project/Test Different GUI/interface.ui")
     window.show()
     sys.exit(app.exec_())
