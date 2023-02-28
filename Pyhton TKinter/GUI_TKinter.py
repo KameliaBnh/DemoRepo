@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 from PIL import Image, ImageTk
 
 
@@ -8,7 +9,7 @@ def open_file():
     file_types = [('Image Files', '*.jpg;*.jpeg;*.png;*.gif')]
 
     # Open a dialog to select a file or folder
-    file_path = tk.filedialog.askopenfilename(filetypes=file_types)
+    file_path = filedialog.askopenfilename(filetypes=file_types)
 
     # Display the selected image
     img = Image.open(file_path)
