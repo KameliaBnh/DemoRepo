@@ -56,6 +56,8 @@ options_frame.pack_propagate(0)
 statistics_frame.pack_propagate(0)
 
 
+############################################################################################################################################################################
+
 ## OPTIONS PANE ##
 
 # Create options for the detection model
@@ -98,6 +100,15 @@ species_label.pack(side="top", anchor="nw")
 
 species_label = tk.Label(statistics_frame, text="Species info: ", padx=5, pady=5)
 species_label.pack(side="top", anchor="nw")
+
+num_images_label = tk.Label(statistics_frame, text="Number of images: ", padx=5, pady=10)
+num_images_label.pack(side="top", anchor="nw")
+
+num_bees_label = tk.Label(statistics_frame, text="Number of bees detected: ", padx=5, pady=5)
+num_bees_label.pack(side="top", anchor="nw")
+
+accuracy_label = tk.Label(statistics_frame, text="Model accuracy: ", padx=5, pady=5)
+accuracy_label.pack(side="top", anchor="nw")
 
 ############################################################################################################################################################################
 
