@@ -109,7 +109,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         SpeciesName.setText("Number fo Pollinators:");
 
-        SpeciesInfo.setText("Species Info: ");
+        SpeciesInfo.setText("Number of images: ");
 
         javax.swing.GroupLayout statisticsPane1Layout = new javax.swing.GroupLayout(statisticsPane1);
         statisticsPane1.setLayout(statisticsPane1Layout);

@@ -8,6 +8,9 @@ from PySide2.QtWidgets import QApplication, QMainWindow, QDialog, QFileDialog, Q
 # Obtenir le chemin du répertoire contenant les modules PySide2
 pyside2_dir = os.path.dirname(QtWidgets.__file__)
 
+
+
+
 # Ajouter le répertoire des plugins de PySide2 au chemin de recherche des plugins de Qt
 os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = os.path.join(pyside2_dir, "plugins", "platforms")
 
