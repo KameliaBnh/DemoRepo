@@ -107,7 +107,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         statisticsPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Statistics Pane"));
 
-        SpeciesName.setText("Species Name: ");
+        SpeciesName.setText("Number fo Pollinators:");
 
         SpeciesInfo.setText("Species Info: ");
 
